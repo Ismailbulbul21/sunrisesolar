@@ -5,7 +5,6 @@ import { MapPin, Clock, Send, MessageCircle, Phone, Mail, CheckCircle } from 'lu
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
-    phone: '',
     message: ''
   })
 
@@ -166,18 +165,6 @@ ${formData.name || 'Website Visitor'}`)
                   placeholder="Enter your name"
                 />
               </div>
-              
-              <div>
-                <label className="block text-gray-700 font-semibold mb-2">Phone Number</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-sunset-orange focus:border-sunset-orange transition-all duration-300"
-                  placeholder="Your phone number"
-                />
-              </div>
 
               <div>
                 <label className="block text-gray-700 font-semibold mb-2">Message</label>
@@ -185,7 +172,7 @@ ${formData.name || 'Website Visitor'}`)
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={4}
+                  rows={6}
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-sunset-orange focus:border-sunset-orange transition-all duration-300"
                   placeholder="Tell us about your solar needs..."
                 />
