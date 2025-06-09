@@ -20,10 +20,9 @@ const Contact = () => {
     const subject = encodeURIComponent(`Solar Inquiry from ${formData.name || 'Website Visitor'}`)
     const body = encodeURIComponent(`Hello Energy Rise Team,
 
-I'm interested in your solar solutions. Here are my details:
+I'm interested in your solar solutions.
 
 Name: ${formData.name || '[Please fill in]'}
-Phone: ${formData.phone || '[Please fill in]'}
 
 Message:
 ${formData.message || 'I would like to learn more about solar installation for my property.'}
@@ -37,15 +36,7 @@ ${formData.name || 'Website Visitor'}`)
   }
 
   const handleWhatsApp = () => {
-    const message = encodeURIComponent(`Hi Energy Rise!
-
-I'm interested in your solar solutions.
-
-Name: ${formData.name || '[Your Name]'}
-Phone: ${formData.phone || '[Your Phone]'}
-Message: ${formData.message || 'I would like to get a free solar consultation.'}
-
-Thank you!`)
+    const message = encodeURIComponent(`Hello, Najiib`)
     
     window.open(`https://wa.me/252617071141?text=${message}`, '_blank')
   }
