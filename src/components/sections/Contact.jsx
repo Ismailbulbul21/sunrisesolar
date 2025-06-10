@@ -17,7 +17,7 @@ const Contact = () => {
 
   const handleEmailClick = () => {
     const subject = encodeURIComponent(`Solar Inquiry from ${formData.name || 'Website Visitor'}`)
-    const body = encodeURIComponent(`Hello Energy Rise Team,
+    const body = encodeURIComponent(`Hello Sunrise Energy Team,
 
 I'm interested in your solar solutions.
 

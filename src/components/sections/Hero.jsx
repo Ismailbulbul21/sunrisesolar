@@ -193,7 +193,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 1.4 }}
               className="mt-6 p-4 bg-white/10 backdrop-blur-md rounded-xl border border-white/20"
             >
-              <h3 className="text-white font-semibold text-base mb-2">Why Choose Energy Rise?</h3>
+              <h3 className="text-white font-semibold text-base mb-2">Why Choose Sunrise Energy?</h3>
               <ul className="space-y-1 text-gray-200 text-sm">
                 <li className="flex items-center space-x-2">
                   <span className="text-emerald-400">✓</span>

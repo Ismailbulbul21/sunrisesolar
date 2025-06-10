@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sun } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import sunriseLogo from '../../assets/sunrise-logo.svg'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -39,7 +40,7 @@ const Header = () => {
   }
 
   const handleWhatsApp = () => {
-    const message = encodeURIComponent("Hi Energy Rise! I'm interested in your solar solutions.")
+    const message = encodeURIComponent("Hi Sunrise Energy! I'm interested in your solar solutions.")
     window.open(`https://wa.me/252617071141?text=${message}`, '_blank')
   }
 
@@ -61,16 +62,13 @@ const Header = () => {
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="flex items-center space-x-3"
+              className="flex items-center"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-sunset-orange via-solar-yellow to-emerald-green rounded-xl flex items-center justify-center shadow-lg backdrop-blur-sm">
-                <Sun className="text-white" size={24} />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-white drop-shadow-lg">
-                  Energy Rise
-                </h1>
-              </div>
+              <img 
+                src={sunriseLogo} 
+                alt="Sunrise Energy" 
+                className="h-12 w-auto"
+              />
             </motion.div>
 
             {/* Desktop Navigation */}

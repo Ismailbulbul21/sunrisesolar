@@ -9,7 +9,7 @@ const Testimonials = () => {
       role: 'Homeowner',
       location: 'Mogadishu',
       rating: 5,
-      text: 'Energy Rise transformed our home with their professional solar installation. Our electricity bills have dropped by 85% and the system works perfectly even during the rainy season.',
+      text: 'Sunrise Energy transformed our home with their professional solar installation. Our electricity bills have dropped by 85% and the system works perfectly even during the rainy season.',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'
     },
     {
@@ -25,7 +25,7 @@ const Testimonials = () => {
       role: 'Farm Owner',
       location: 'Kismayo',
       rating: 5,
-      text: 'The solar water pumping system has revolutionized our farming operations. Reliable water supply and no more fuel costs. Energy Rise delivered exactly what they promised.',
+      text: 'The solar water pumping system has revolutionized our farming operations. Reliable water supply and no more fuel costs. Sunrise Energy delivered exactly what they promised.',
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face'
     }
   ]
@@ -50,7 +50,7 @@ const Testimonials = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our satisfied customers 
-            have to say about their solar energy experience with Energy Rise.
+            have to say about their solar energy experience with Sunrise Energy.
           </p>
         </motion.div>
 
@@ -111,7 +111,7 @@ const Testimonials = () => {
               Join Our Growing Family of Satisfied Customers
             </h3>
             <p className="text-lg mb-8 opacity-90">
-              Experience the Energy Rise difference with our proven track record of excellence.
+              Experience the Sunrise Energy difference with our proven track record of excellence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button

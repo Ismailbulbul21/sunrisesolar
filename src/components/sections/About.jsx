@@ -55,7 +55,7 @@ const About = () => {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center px-4 py-2 bg-emerald-green/10 rounded-full mb-4">
-            <span className="text-emerald-green font-semibold text-sm">ABOUT ENERGY RISE</span>
+            <span className="text-emerald-green font-semibold text-sm">ABOUT SUNRISE ENERGY</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Green Energy for
@@ -107,7 +107,7 @@ const About = () => {
               </div>
               <div className="text-left">
                 <div className="font-bold text-lg">CEO Message</div>
-                <div className="text-gray-300">Energy Rise Leadership</div>
+                <div className="text-gray-300">Sunrise Energy Leadership</div>
               </div>
             </div>
           </div>
@@ -149,7 +149,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <h3 className="text-3xl font-bold text-gray-900 mb-8">
-              Why Choose Energy Rise?
+              Why Choose Sunrise Energy?
             </h3>
             <div className="space-y-4">
               {features.map((feature, index) => (

@@ -1,225 +1,260 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { 
-  Sun, 
-  MapPin, 
   Facebook, 
   Twitter, 
+  Instagram, 
   Linkedin, 
-  Youtube,
-  ArrowUp
+  Mail, 
+  Phone, 
+  MapPin,
+  ArrowRight
 } from 'lucide-react'
+import sunriseLogo from '../../assets/sunrise-logo.svg'
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
-  const footerLinks = {
-    company: [
-      { name: 'About Us', href: '#about' },
-      { name: 'Our Team', href: '#team' },
-      { name: 'Careers', href: '#careers' },
-      { name: 'News & Media', href: '#media' }
-    ],
-    services: [
-      { name: 'Residential Solar', href: '#residential' },
-      { name: 'Commercial Solar', href: '#commercial' },
-      { name: 'Water Heating', href: '#water-heating' },
-      { name: 'Water Pumps', href: '#water-pumps' },
-      { name: 'Street Lighting', href: '#street-lighting' },
-      { name: 'Air Conditioning', href: '#air-conditioning' }
-    ],
-    support: [
-      { name: 'Contact Us', href: '#contact' },
-      { name: 'FAQ', href: '#faq' },
-      { name: 'Warranty', href: '#warranty' },
-      { name: 'Maintenance', href: '#maintenance' }
-    ]
-  }
+  const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { 
-      icon: Facebook, 
-      href: 'https://www.facebook.com/energyrise.somalia', 
-      label: 'Facebook' 
-    },
-    { 
-      icon: Twitter, 
-      href: 'https://twitter.com/energyrise_so', 
-      label: 'Twitter' 
-    },
-    { 
-      icon: Linkedin, 
-      href: 'https://www.linkedin.com/company/energy-rise-somalia', 
-      label: 'LinkedIn' 
-    },
-    { 
-      icon: Youtube, 
-      href: 'https://www.youtube.com/@energyrisesomalia', 
-      label: 'YouTube' 
-    }
+    { icon: Facebook, href: '#', label: 'Facebook' },
+    { icon: Twitter, href: '#', label: 'Twitter' },
+    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Linkedin, href: '#', label: 'LinkedIn' }
   ]
 
+  const quickLinks = [
+    'About Us',
+    'Solar Solutions',
+    'Installation',
+    'Maintenance',
+    'Financing',
+    'Contact'
+  ]
+
+  const services = [
+    'Residential Solar',
+    'Commercial Solar',
+    'Solar Water Heating',
+    'Solar Pumping',
+    'Energy Storage',
+    'Grid-Tie Systems'
+  ]
+
+  const scrollToSection = (href) => {
+    const element = document.querySelector(href)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
-    <footer className="bg-deep-violet text-white">
-      {/* Main Footer */}
-      <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-1"
-          >
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-sunset-orange to-solar-yellow rounded-full flex items-center justify-center">
-                <Sun className="text-white" size={24} />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold gradient-text">Energy Rise</h3>
-                <p className="text-sm text-gray-300">Solar Solutions</p>
-              </div>
-            </div>
-            <p className="text-gray-300 leading-relaxed mb-6">
-              Leading Somalia's transition to clean, renewable energy with innovative 
-              solar solutions for homes and businesses.
-            </p>
-            
-            {/* Contact Info */}
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <MapPin size={16} className="text-solar-yellow" />
-                <span className="text-sm">Next To Cid Hq, Number 4<br />Mogadishu, Somalia</span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Company Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <h4 className="text-lg font-bold mb-6">Company</h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link, index) => (
-                <li key={index}>
-                  <a 
-                    href={link.href}
-                    className="text-gray-300 hover:text-solar-yellow transition-colors duration-300"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Services Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h4 className="text-lg font-bold mb-6">Services</h4>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link, index) => (
-                <li key={index}>
-                  <a 
-                    href={link.href}
-                    className="text-gray-300 hover:text-solar-yellow transition-colors duration-300"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Support & Newsletter */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <h4 className="text-lg font-bold mb-6">Support</h4>
-            <ul className="space-y-3 mb-8">
-              {footerLinks.support.map((link, index) => (
-                <li key={index}>
-                  <a 
-                    href={link.href}
-                    className="text-gray-300 hover:text-solar-yellow transition-colors duration-300"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            {/* Newsletter */}
-            <div>
-              <h5 className="font-bold mb-3">Stay Updated</h5>
-              <p className="text-gray-300 text-sm mb-4">
-                Subscribe to our newsletter for solar energy tips and updates.
-              </p>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-solar-yellow"
-                />
-                <button className="bg-solar-yellow text-deep-violet px-4 py-2 rounded-r-lg hover:bg-sunset-orange transition-colors duration-300">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+    <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }} />
       </div>
 
-      {/* Bottom Footer */}
-      <div className="border-t border-white/10">
-        <div className="container-custom py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            {/* Copyright */}
-            <div className="text-gray-300 text-sm">
-              © 2025 Energy Rise. All Rights Reserved.
+      <div className="relative z-10">
+        {/* Newsletter Section */}
+        <div className="border-b border-gray-700">
+          <div className="container-custom py-12">
+            <div className="max-w-4xl mx-auto text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-3xl font-bold mb-4">
+                  Stay Updated with Solar Innovations
+                </h3>
+                <p className="text-gray-300 mb-8 text-lg">
+                  Get the latest news on solar technology, energy savings tips, and exclusive offers.
+                </p>
+                <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-4">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-1 px-6 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-sunset-orange backdrop-blur-sm"
+                  />
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-gradient-to-r from-sunset-orange to-solar-yellow text-white font-semibold px-8 py-3 rounded-full hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
+                  >
+                    <span>Subscribe</span>
+                    <ArrowRight size={18} />
+                  </motion.button>
+                </div>
+              </motion.div>
             </div>
+          </div>
+        </div>
 
-            {/* Social Links */}
-            <div className="flex items-center space-x-4">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-solar-yellow hover:text-deep-violet transition-all duration-300"
-                  aria-label={social.label}
-                >
-                  <social.icon size={18} />
-                </motion.a>
-              ))}
-            </div>
-
-            {/* Back to Top */}
-            <motion.button
-              onClick={scrollToTop}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-10 h-10 bg-sunset-orange rounded-full flex items-center justify-center hover:bg-solar-yellow transition-colors duration-300"
-              aria-label="Back to top"
+        {/* Main Footer Content */}
+        <div className="container-custom py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            
+            {/* Company Info */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="lg:col-span-1"
             >
-              <ArrowUp size={18} />
-            </motion.button>
+              <div className="flex items-center space-x-3 mb-6">
+                <img 
+                  src={sunriseLogo} 
+                  alt="Sunrise Energy" 
+                  className="h-10 w-auto"
+                />
+              </div>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Leading solar energy provider in Somalia, delivering sustainable and reliable 
+                renewable energy solutions for homes and businesses.
+              </p>
+              
+              {/* Social Links */}
+              <div className="flex space-x-4">
+                {socialLinks.map((social, index) => (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-sunset-orange hover:border-sunset-orange transition-all duration-300"
+                    aria-label={social.label}
+                  >
+                    <social.icon size={18} />
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Quick Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-xl font-bold mb-6">Quick Links</h4>
+              <ul className="space-y-3">
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <button
+                      onClick={() => scrollToSection(`#${link.toLowerCase().replace(/\s+/g, '-')}`)}
+                      className="text-gray-300 hover:text-sunset-orange transition-colors duration-300 flex items-center group"
+                    >
+                      <ArrowRight size={14} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      {link}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Services */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-xl font-bold mb-6">Our Services</h4>
+              <ul className="space-y-3">
+                {services.map((service, index) => (
+                  <li key={index}>
+                    <button
+                      onClick={() => scrollToSection('#services')}
+                      className="text-gray-300 hover:text-sunset-orange transition-colors duration-300 flex items-center group"
+                    >
+                      <ArrowRight size={14} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      {service}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Contact Info */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-xl font-bold mb-6">Contact Info</h4>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <MapPin size={18} className="text-sunset-orange mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-gray-300">
+                      Hodan District, Mogadishu<br />
+                      Somalia
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Phone size={18} className="text-sunset-orange flex-shrink-0" />
+                  <a href="tel:+252617071141" className="text-gray-300 hover:text-white transition-colors">
+                    +252 61 707 1141
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Mail size={18} className="text-sunset-orange flex-shrink-0" />
+                  <a href="mailto:info@sunriseenergy.so" className="text-gray-300 hover:text-white transition-colors">
+                    info@sunriseenergy.so
+                  </a>
+                </div>
+              </div>
+
+              {/* Business Hours */}
+              <div className="mt-6 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
+                <h5 className="font-semibold mb-2 text-sunset-orange">Business Hours</h5>
+                <div className="text-sm text-gray-300 space-y-1">
+                  <div className="flex justify-between">
+                    <span>Mon - Fri:</span>
+                    <span>8:00 AM - 6:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Saturday:</span>
+                    <span>9:00 AM - 4:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Sunday:</span>
+                    <span>Closed</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-700">
+          <div className="container-custom py-8">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              {/* Copyright */}
+              <div className="text-gray-300 text-sm">
+                © 2025 Sunrise Energy. All Rights Reserved.
+              </div>
+              
+              {/* Legal Links */}
+              <div className="flex space-x-6 text-sm">
+                <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                  Privacy Policy
+                </a>
+                <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                  Terms of Service
+                </a>
+                <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                  Cookie Policy
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

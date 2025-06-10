@@ -1,0 +1,22 @@
+<svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sun rays -->
+  <polygon points="30,20 35,10 40,20" fill="#FF8C42"/>
+  <polygon points="45,15 50,5 55,15" fill="#FF8C42"/>
+  <polygon points="60,12 65,2 70,12" fill="#FF8C42"/>
+  <polygon points="75,10 80,0 85,10" fill="#FF8C42"/>
+  <polygon points="90,12 95,2 100,12" fill="#FF8C42"/>
+  <polygon points="105,15 110,5 115,15" fill="#FF8C42"/>
+  <polygon points="120,20 125,10 130,20" fill="#FF8C42"/>
+  
+  <!-- Left side rays -->
+  <polygon points="15,25 5,20 15,35" fill="#FF8C42"/>
+  <polygon points="18,40 8,35 18,50" fill="#FF8C42"/>
+  <polygon points="20,55 10,50 20,65" fill="#FF8C42"/>
+  
+  <!-- Main sun circle -->
+  <circle cx="70" cy="45" r="35" fill="#FF8C42"/>
+  <circle cx="70" cy="45" r="30" fill="#FF6B35"/>
+  
+  <!-- Text -->
+  <text x="115" y="55" font-family="Arial, sans-serif" font-size="28" font-weight="300" fill="#FF8C42">Sunrise</text>
+</svg> 

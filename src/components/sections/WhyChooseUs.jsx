@@ -194,11 +194,11 @@ const WhyChooseUs = () => {
         >
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
-              The Energy Rise Advantage
+              The Sunrise Energy Advantage
             </h3>
             <p className="text-lg opacity-90 max-w-2xl mx-auto">
               Join hundreds of satisfied customers who have made the switch to clean, 
-              renewable energy with Energy Rise.
+              renewable energy with Sunrise Energy.
             </p>
           </div>
 
