@@ -49,25 +49,25 @@ const Header = () => {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`sticky top-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled 
-            ? 'bg-white/98 backdrop-blur-md shadow-xl border-b border-gray-100' 
-            : 'bg-white/95 backdrop-blur-md'
+            ? 'bg-white/10 backdrop-blur-xl border-b border-white/20' 
+            : 'bg-transparent'
         }`}
       >
         {/* Main Navigation */}
-        <nav className="container-custom py-4">
+        <nav className="container-custom py-6">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.02 }}
               className="flex items-center space-x-3"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-sunset-orange via-solar-yellow to-emerald-green rounded-xl flex items-center justify-center shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-br from-sunset-orange via-solar-yellow to-emerald-green rounded-xl flex items-center justify-center shadow-lg backdrop-blur-sm">
                 <Sun className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">
+                <h1 className="text-2xl font-bold text-white drop-shadow-lg">
                   Energy Rise
                 </h1>
               </div>
@@ -79,13 +79,13 @@ const Header = () => {
                 <div key={index} className="relative group">
                   <button
                     onClick={() => scrollToSection(item.href)}
-                    className="font-semibold text-base transition-all duration-300 hover:text-sunset-orange relative text-gray-900"
+                    className="font-semibold text-base transition-all duration-300 hover:text-sunset-orange relative text-white drop-shadow-md"
                   >
                     {item.name}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-sunset-orange transition-all duration-300 group-hover:w-full"></span>
                   </button>
                   {item.dropdown && (
-                    <div className="absolute top-full left-0 mt-3 w-72 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-gray-100">
+                    <div className="absolute top-full left-0 mt-3 w-72 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-white/20">
                       <div className="py-3">
                         {item.dropdown.map((subItem, subIndex) => (
                           <button
@@ -103,21 +103,11 @@ const Header = () => {
               ))}
             </div>
 
-            {/* CTA Buttons & Mobile Menu */}
-            <div className="flex items-center space-x-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection('#contact')}
-                className="hidden md:block bg-gradient-to-r from-sunset-orange to-solar-yellow text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                Get Free Quote
-              </motion.button>
-              
-              {/* Mobile Menu Button */}
+            {/* Mobile Menu Button */}
+            <div className="flex items-center">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="lg:hidden p-3 rounded-xl transition-all duration-300 text-gray-900 hover:bg-gray-100"
+                className="lg:hidden p-3 rounded-xl transition-all duration-300 text-white drop-shadow-lg hover:bg-white/10 backdrop-blur-sm"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -132,7 +122,7 @@ const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-white/98 backdrop-blur-md border-t border-gray-200"
+              className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-white/20"
             >
               <div className="container-custom py-6">
                 <div className="space-y-4">
@@ -159,14 +149,6 @@ const Header = () => {
                       )}
                     </div>
                   ))}
-                  <div className="pt-4 space-y-3">
-                    <button
-                      onClick={() => scrollToSection('#contact')}
-                      className="w-full bg-gradient-to-r from-sunset-orange to-solar-yellow text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300"
-                    >
-                      Get Free Quote
-                    </button>
-                  </div>
                 </div>
               </div>
             </motion.div>
